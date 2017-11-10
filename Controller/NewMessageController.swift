@@ -31,8 +31,10 @@ class NewMessageController: UITableViewController {
             if let dictionary = snapshot.value as? [String: Any] {
                 let user = User()
                 user.id = snapshot.key
+                user.email = dictionary["email"] as! String
+                user.profileImageURL = dictionary["profileImageURL"] as! String
                 
-                user.setValuesForKeys(dictionary)
+//                user.setValuesForKeys(dictionary)
                 self.users.append(user)
                 
                 DispatchQueue.main.async {
@@ -82,12 +84,21 @@ class NewMessageController: UITableViewController {
     var messagesController: MessagesController?
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        dismiss(animated: true) {
-            let user = self.users[indexPath.row]
-            self.messagesController?.showChatControllerForUser(user: user)
-        }
+        
+       let user = self.users[indexPath.row]
+        self.showChatControllerForUser(user: user)
+        
+//       navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>) self.messagesController?.showChatControllerForUser(user: user)
+//        dismiss(animated: true) {
+//            let user = self.users[indexPath.row]
+//            self.messagesController?.showChatControllerForUser(user: user)
+//        }
     }
-    
+    func showChatControllerForUser(user: User) {
+        let chatController = ChatController(collectionViewLayout: UICollectionViewFlowLayout())
+        chatController.user = user
+        navigationController?.pushViewController(chatController, animated: true)
+    }
 }
 
 
