@@ -31,8 +31,8 @@ class NewMessageController: UITableViewController {
             if let dictionary = snapshot.value as? [String: Any] {
                 let user = User()
                 user.id = snapshot.key
-                user.email = dictionary["email"] as! String
-                user.profileImageURL = dictionary["profileImageURL"] as! String
+                user.email = dictionary["email"] as? String
+                user.profileImageURL = dictionary["profileImageURL"] as? String
                 
 //                user.setValuesForKeys(dictionary)
                 self.users.append(user)
