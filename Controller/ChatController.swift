@@ -38,7 +38,7 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
                 }
                 
                 let message = ChatMessage()
-                message.toId = dictionary["toId"] as! String
+                message.toId = dictionary["toId"] as? String
                 message.fromId = dictionary["fromId"] as? String
                 message.text = dictionary["text"] as? String
                 message.timestamp = dictionary["timestamp"] as? NSNumber

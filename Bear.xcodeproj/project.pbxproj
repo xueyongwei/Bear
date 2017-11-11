@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2727A6AC1F930FE70045DC8F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727A6AB1F930FE70045DC8F /* LoginViewController.swift */; };
 		2727A6AE1F9310060045DC8F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727A6AD1F9310060045DC8F /* RegisterViewController.swift */; };
-		2727A6B01F9310280045DC8F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727A6AF1F9310280045DC8F /* WelcomeViewController.swift */; };
+		2727A6B01F9310280045DC8F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2727A6AF1F9310280045DC8F /* ProfileViewController.swift */; };
 		2727A6B21F9312B00045DC8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2727A6B11F93113A0045DC8F /* GoogleService-Info.plist */; };
 		27A5000A1F92F2DC0050AACF /* BearTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A500091F92F2DC0050AACF /* BearTests.swift */; };
 		27A500151F92F2DC0050AACF /* BearUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A500141F92F2DC0050AACF /* BearUITests.swift */; };
@@ -19,7 +19,7 @@
 		27A5FFFC1F92F2DB0050AACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A5FFFB1F92F2DB0050AACF /* Assets.xcassets */; };
 		27A5FFFF1F92F2DB0050AACF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A5FFFD1F92F2DB0050AACF /* LaunchScreen.storyboard */; };
 		27C262921F96CCC800840E1C /* SendingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C262911F96CCC800840E1C /* SendingVC.swift */; };
-		27C262941F96DCC800840E1C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C262931F96DCC800840E1C /* FirstViewController.swift */; };
+		27C262941F96DCC800840E1C /* MpaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C262931F96DCC800840E1C /* MpaViewController.swift */; };
 		27C262961F96DEDF00840E1C /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C262951F96DEDF00840E1C /* MapViewExtension.swift */; };
 		27C262981F96DF5D00840E1C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C262971F96DF5D00840E1C /* Message.swift */; };
 		2A61A96CAAF87894EC66E183 /* Pods_Bear.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85BA762C3C3B7CD61BF136A /* Pods_Bear.framework */; };
@@ -59,7 +59,7 @@
 /* Begin PBXFileReference section */
 		2727A6AB1F930FE70045DC8F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2727A6AD1F9310060045DC8F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		2727A6AF1F9310280045DC8F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		2727A6AF1F9310280045DC8F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2727A6B11F93113A0045DC8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		27A500001F92F2DB0050AACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27A500051F92F2DC0050AACF /* BearTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BearTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,7 +75,7 @@
 		27A5FFFB1F92F2DB0050AACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27A5FFFE1F92F2DB0050AACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27C262911F96CCC800840E1C /* SendingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingVC.swift; sourceTree = "<group>"; };
-		27C262931F96DCC800840E1C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		27C262931F96DCC800840E1C /* MpaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MpaViewController.swift; sourceTree = "<group>"; };
 		27C262951F96DEDF00840E1C /* MapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
 		27C262971F96DF5D00840E1C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		3B00F1F51745FEA3E2DC42C6 /* Pods-Bear.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bear.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bear/Pods-Bear.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,13 +129,13 @@
 				477BE5E61FB5DE0700A08ABF /* New Group */,
 				2727A6AB1F930FE70045DC8F /* LoginViewController.swift */,
 				2727A6AD1F9310060045DC8F /* RegisterViewController.swift */,
-				2727A6AF1F9310280045DC8F /* WelcomeViewController.swift */,
-				27C262911F96CCC800840E1C /* SendingVC.swift */,
-				27C262931F96DCC800840E1C /* FirstViewController.swift */,
-				27C262951F96DEDF00840E1C /* MapViewExtension.swift */,
-				27C262971F96DF5D00840E1C /* Message.swift */,
 				477BE6031FB5E72D00A08ABF /* MessagesController.swift */,
 				477BE6011FB5E70300A08ABF /* FriendsTableViewController.swift */,
+				27C262911F96CCC800840E1C /* SendingVC.swift */,
+				2727A6AF1F9310280045DC8F /* ProfileViewController.swift */,
+				27C262931F96DCC800840E1C /* MpaViewController.swift */,
+				27C262951F96DEDF00840E1C /* MapViewExtension.swift */,
+				27C262971F96DF5D00840E1C /* Message.swift */,
 				477BE5EF1FB5DE3C00A08ABF /* FriendTableViewController.swift */,
 				477BE5ED1FB5DE3C00A08ABF /* FriendViewController.swift */,
 				477BE5EE1FB5DE3C00A08ABF /* UserItem.swift */,
@@ -452,7 +452,7 @@
 				2727A6AC1F930FE70045DC8F /* LoginViewController.swift in Sources */,
 				477BE5FE1FB5E02600A08ABF /* ChatMessageCell.swift in Sources */,
 				27C262921F96CCC800840E1C /* SendingVC.swift in Sources */,
-				2727A6B01F9310280045DC8F /* WelcomeViewController.swift in Sources */,
+				2727A6B01F9310280045DC8F /* ProfileViewController.swift in Sources */,
 				477BE5EB1FB5DE0800A08ABF /* CustomButton.swift in Sources */,
 				477BE5F11FB5DE3C00A08ABF /* UserItem.swift in Sources */,
 				27C262981F96DF5D00840E1C /* Message.swift in Sources */,
@@ -464,7 +464,7 @@
 				2727A6AE1F9310060045DC8F /* RegisterViewController.swift in Sources */,
 				477BE6001FB5E03300A08ABF /* Extensions.swift in Sources */,
 				477BE6021FB5E70300A08ABF /* FriendsTableViewController.swift in Sources */,
-				27C262941F96DCC800840E1C /* FirstViewController.swift in Sources */,
+				27C262941F96DCC800840E1C /* MpaViewController.swift in Sources */,
 				477BE5F01FB5DE3C00A08ABF /* FriendViewController.swift in Sources */,
 				477BE5EA1FB5DE0800A08ABF /* HoshiTextField.swift in Sources */,
 				27C262961F96DEDF00840E1C /* MapViewExtension.swift in Sources */,
