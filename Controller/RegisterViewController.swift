@@ -11,9 +11,6 @@ import Firebase
 
 class RegisterViewController: UIViewController {
     
-    
-   
-    
     @IBOutlet weak var btnRegister: UIButton!
     
    
@@ -33,16 +30,25 @@ class RegisterViewController: UIViewController {
     
     @IBAction func btnRegister_TouchUpInside(_ sender: UIButton) {
      
-        if let email = txtEmail.text, let password = txtPassword.text {
+        if let email = txtEmail.text, let username = txtUsername.text,let password = txtPassword.text {
             
             self.indicator.isHidden = false
             self.indicator.startAnimating()
             
             Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                 // ...
+                guard let uid = user?.uid else {
+                    return
+                }
                 if user != nil{
+                    let values = ["name": username, "email": email, "profileImageURL" : "null"]
+                    
+                    self.registerUserIntoDatabaseWithUID(uid: uid, values: values)
+                    
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "navigation")
                     self.present(vc!, animated: true, completion: nil)
+                    
+                    
                 }
                 else{
                     let alertController = UIAlertController(title: "Registration Failed!", message: (error?.localizedDescription)!, preferredStyle: UIAlertControllerStyle.alert)
@@ -73,7 +79,23 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    private func registerUserIntoDatabaseWithUID(uid: String, values: [String: Any]) {
+        let ref = Database.database().reference()
+        let usersReference = ref.child("users").child(uid)
+        
+        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+            
+            if err != nil {
+                print(err!)
+                return
+            }
+            
+            let user = User()
+            user.setValuesForKeys(values)
+            
+        })
+        
+    }
     /*
      // MARK: - Navigation
      

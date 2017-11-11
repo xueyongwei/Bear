@@ -421,8 +421,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3xs-Cm-XCt">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="628"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3xs-Cm-XCt">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -463,7 +463,7 @@
             </objects>
             <point key="canvasLocation" x="793" y="1230"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Chats-->
         <scene sceneID="Hro-v8-Rcu">
             <objects>
                 <tableViewController id="mVp-kN-c68" customClass="MessagesController" customModule="Bear" customModuleProvider="target" sceneMemberID="viewController">
@@ -476,7 +476,7 @@
                             <outlet property="delegate" destination="mVp-kN-c68" id="BJj-4I-dNR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="9ez-PM-5qs"/>
+                    <navigationItem key="navigationItem" title="Chats" id="9ez-PM-5qs"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcq-vH-Ifl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -516,10 +516,10 @@
             </objects>
             <point key="canvasLocation" x="50" y="2033"/>
         </scene>
-        <!--New Message Controller-->
+        <!--Friends Table View Controller-->
         <scene sceneID="2Rz-T4-amn">
             <objects>
-                <tableViewController id="a87-Zm-LHO" customClass="NewMessageController" customModule="Bear" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="a87-Zm-LHO" customClass="FriendsTableViewController" customModule="Bear" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wxj-nj-6Qr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

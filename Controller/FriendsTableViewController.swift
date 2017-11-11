@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class NewMessageController: UITableViewController {
+class FriendsTableViewController: UITableViewController {
     
     let cellId = "cellId"
     
@@ -18,7 +18,7 @@ class NewMessageController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
         
         tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         

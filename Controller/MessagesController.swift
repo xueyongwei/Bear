@@ -16,10 +16,10 @@ class MessagesController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
-        
-        let image = UIImage(named: "newMessage")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(handleNewMessage))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+//
+//        let image = UIImage(named: "newMessage")
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(handleNewMessage))
         
         checkIfUserIsLoggedIn()
         
@@ -142,7 +142,7 @@ class MessagesController: UITableViewController {
     }
     
     @objc func handleNewMessage() {
-        let newMessageController = NewMessageController()
+        let newMessageController = FriendsTableViewController()
         newMessageController.messagesController = self
         let navController = UINavigationController(rootViewController: newMessageController)
         present(navController, animated: true, completion: nil)
@@ -159,6 +159,7 @@ class MessagesController: UITableViewController {
     func fetchUserAndSetupNavigationBar() {
         
         guard let uid = Auth.auth().currentUser?.uid else {
+            print("auth not done")
             return
         }
         
