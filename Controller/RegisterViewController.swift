@@ -53,7 +53,7 @@ class RegisterViewController: UIViewController {
                                 return
                             }
                             if let profileImageURL = metadata?.downloadURL()?.absoluteString {
-                                let values = ["name": name, "email": email, "profileImageURL" : profileImageURL]
+                                let values = ["name": username, "email": email, "profileImageURL" : profileImageURL]
                                 
                                 self.registerUserIntoDatabaseWithUID(uid: uid, values: values)
                             }
