@@ -45,13 +45,26 @@ class FriendsTableViewController: UITableViewController {
                 }
                 
                 }
-                
-                
-                
-//                user.name = dictionary["name"]
-                
             }
         }, withCancel: nil)
+        
+        Database.database().reference().child("users").observe(.childChanged) { (snapshot) in
+            if let dictionary = snapshot.value as? [String: Any] {
+                
+                let uid = snapshot.key
+                for user in self.users {
+                    if uid == user.id{
+                        user.name = dictionary["name"] as? String
+                         user.profileImageURL = dictionary["profileImageURL"] as? String
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        break
+                    }
+                }
+            }
+        }
+        
     }
     
     @objc func handleCancel() {
