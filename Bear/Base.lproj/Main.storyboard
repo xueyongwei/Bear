@@ -408,7 +408,7 @@
                     <navigationItem key="navigationItem" title="Profile" id="HFL-EX-YaS"/>
                     <connections>
                         <outlet property="imgPhoto" destination="EhU-J8-j34" id="nzy-eC-Dl5"/>
-                        <outlet property="receivingLabel" destination="Kl9-6v-v7S" id="G49-7p-Isv"/>
+                        <outlet property="receivingLabel" destination="Kl9-6v-v7S" id="y46-6R-g6T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgF-cf-5Vv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -637,10 +637,10 @@
             </objects>
             <point key="canvasLocation" x="4865" y="1737"/>
         </scene>
-        <!--SendingVC-->
+        <!--Name Edit View Controller-->
         <scene sceneID="F1a-T7-oOJ">
             <objects>
-                <viewController id="fHs-Qd-uMi" customClass="SendingVC" customModule="Bear" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="fHs-Qd-uMi" customClass="NameEditViewController" customModule="Bear" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lDq-Np-h0f"/>
                         <viewControllerLayoutGuide type="bottom" id="HXy-qC-Pkx"/>
@@ -673,7 +673,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ehQ-fB-f4Q" firstAttribute="top" secondItem="2uh-Gb-jfY" secondAttribute="bottom" constant="25" id="K9b-ac-Lld"/>
                             <constraint firstItem="2uh-Gb-jfY" firstAttribute="leading" secondItem="Ztz-a2-vEd" secondAttribute="leading" constant="10" id="Vra-0h-0mx"/>

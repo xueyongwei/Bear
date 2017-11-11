@@ -22,9 +22,9 @@ class ProfileViewController: UIViewController, DataSentDelegate, UIImagePickerCo
     //    storageRef = Storage.storage().reference(forURL: "gs://" + storageUrl!)
     //}
     
-   
+    
     @IBAction func btnSavePhoto_Tap(_ sender: UIButton) {
-    let imageData = UIImageJPEGRepresentation(imgPhoto.image!, 0.6)
+        let imageData = UIImageJPEGRepresentation(imgPhoto.image!, 0.6)
         let compressedJPEGImage = UIImage(data: imageData!)
         UIImageWriteToSavedPhotosAlbum(compressedJPEGImage!, nil, nil, nil)
         let ac = UIAlertController(title: "Photo Saved!", message: "Your photo was saved successfully", preferredStyle:  .alert)
@@ -44,9 +44,9 @@ class ProfileViewController: UIViewController, DataSentDelegate, UIImagePickerCo
         //  }
     }
     
-   
+    
     @IBAction func btnTakePhoto_TouchUpInside(_ sender: UIButton) {
-    if UIImagePickerController.isSourceTypeAvailable(.camera) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imgPicker = UIImagePickerController()
             imgPicker.delegate = self
             imgPicker.sourceType = .camera
@@ -57,7 +57,7 @@ class ProfileViewController: UIViewController, DataSentDelegate, UIImagePickerCo
     
     
     @IBAction func btnPickPhoto_TouchUpInside(_ sender: UIButton) {
-    
+        
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let imgPicker = UIImagePickerController()
             imgPicker.delegate = self
@@ -81,21 +81,103 @@ class ProfileViewController: UIViewController, DataSentDelegate, UIImagePickerCo
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchUserAndSetupUI()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+    func fetchUserAndSetupUI() {
+        
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("auth not done")
+            return
+        }
+        
+        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let dictionary = snapshot.value as? [String: Any] {
+                self.navigationItem.title = dictionary["name"] as? String
+                
+                let user = User()
+                user.email = dictionary["email"] as? String
+                user.name = dictionary["name"] as? String
+                user.profileImageURL = dictionary["profileImageURL"] as? String
+                self.receivingLabel.text = user.name
+                if let profileImageURL = user.profileImageURL {
+                    self.imgPhoto.loadImageUsingCacheWithUrlString(urlString: profileImageURL)
+                    
+                }
+            }
+            
+        }, withCancel: nil)
+    }
     func userDidEnterData(Data: String) {
-        receivingLabel.text = Data
+        self.receivingLabel.text = Data
         
     }
+    func updateUserName(name: String) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
+        let ref = Database.database().reference()
+        
+        let usersReference = ref.child("users").child(uid)
+        
+        usersReference.updateChildValues(["name" : name], withCompletionBlock: { (err, ref) in
+            
+            if err != nil {
+                print(err!)
+                return
+            }
+        })
+    }
+    func updateprofileImage(profileImage:UIImage) {
+        
+        let imageName = NSUUID().uuidString
+        
+        let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName)")
+        
+        if let uploadData = UIImageJPEGRepresentation(profileImage, 0.1) {
+            
+            storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                
+                if let profileImageURL = metadata?.downloadURL()?.absoluteString {
+                    
+                    guard let uid = Auth.auth().currentUser?.uid else {
+                        return
+                    }
+                    
+                    let ref = Database.database().reference()
+                    let usersReference = ref.child("users").child(uid)
+                   
+                    usersReference.updateChildValues(["profileImageURL" : profileImageURL], withCompletionBlock: { (err, ref) in
+                        
+                        if err != nil {
+                            print(err!)
+                            return
+                        }
+                        
+                    })
+                }
+                
+                
+            })
+        }
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSendingVC" {
             
-            let sendingVC: SendingVC = segue.destination as! SendingVC
+            let sendingVC: NameEditViewController = segue.destination as! NameEditViewController
             sendingVC.delegate = self
             
         }
