@@ -41,9 +41,24 @@ class RegisterViewController: UIViewController {
                     return
                 }
                 if user != nil{
-                    let values = ["name": username, "email": email, "profileImageURL" : "null"]
                     
-                    self.registerUserIntoDatabaseWithUID(uid: uid, values: values)
+                    let imageName = NSUUID().uuidString
+                    let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName)")
+                    
+                    if let profileImage = UIImage.init(named: "defaultUserImg"), let uploadData = UIImageJPEGRepresentation(profileImage, 0.1) {
+                        
+                        storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                            if error != nil {
+                                print(error!)
+                                return
+                            }
+                            
+                            if (metadata?.downloadURL()?.absoluteString) != nil {
+                                let values = ["name": username, "email": email, "profileImageURL" : "null"]
+                                 self.registerUserIntoDatabaseWithUID(uid: uid, values: values)
+                            }
+                        })
+                    }
                     
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "navigation")
                     self.present(vc!, animated: true, completion: nil)

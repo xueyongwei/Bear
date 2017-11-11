@@ -212,7 +212,7 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
         if message.fromId == Auth.auth().currentUser?.uid {
             // blue
             
-            cell.bubbleView.backgroundColor = ChatMessageCell.blueColor
+            cell.bubbleView.backgroundColor = UIColor.lightGray
             cell.profileImageView.isHidden = true
             
             cell.bubbleViewRightAnchor?.isActive = true
@@ -221,7 +221,7 @@ class ChatController: UICollectionViewController, UITextFieldDelegate, UICollect
         } else {
             // pink
             
-            cell.bubbleView.backgroundColor = ChatMessageCell.pinkColor
+            cell.bubbleView.backgroundColor = UIColor.darkGray
             cell.profileImageView.isHidden = false
             
             cell.bubbleViewRightAnchor?.isActive = false
