@@ -31,14 +31,19 @@ class FriendsTableViewController: UITableViewController {
             if let dictionary = snapshot.value as? [String: Any] {
                 let user = User()
                 user.id = snapshot.key
-                user.email = dictionary["email"] as? String
-                user.profileImageURL = dictionary["profileImageURL"] as? String
-                user.name = dictionary["name"] as? String
-//                user.setValuesForKeys(dictionary)
-                self.users.append(user)
                 
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                if user.id != Auth.auth().currentUser?.uid
+                {
+                    user.email = dictionary["email"] as? String
+                    user.profileImageURL = dictionary["profileImageURL"] as? String
+                    user.name = dictionary["name"] as? String
+                    //                user.setValuesForKeys(dictionary)
+                    self.users.append(user)
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                }
+                
                 }
                 
                 
