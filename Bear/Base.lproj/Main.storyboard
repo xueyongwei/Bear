@@ -568,7 +568,7 @@
             </objects>
             <point key="canvasLocation" x="161" y="1119"/>
         </scene>
-        <!--Friends Table View Controller-->
+        <!--Contacts-->
         <scene sceneID="2Rz-T4-amn">
             <objects>
                 <tableViewController id="a87-Zm-LHO" customClass="FriendsTableViewController" customModule="Bear" customModuleProvider="target" sceneMemberID="viewController">
@@ -581,7 +581,7 @@
                             <outlet property="delegate" destination="a87-Zm-LHO" id="AVm-TM-oVF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="0hp-iW-gQU"/>
+                    <navigationItem key="navigationItem" title="Contacts" id="0hp-iW-gQU"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2X-Rl-9Zy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
