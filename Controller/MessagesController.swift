@@ -13,6 +13,9 @@ class MessagesController: UITableViewController {
     
     let cellId = "cellId"
 
+    var profileImageView = UIImageView()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -194,6 +197,7 @@ class MessagesController: UITableViewController {
         
         observeUserMessages()
         
+        /*
         let titleView = UIView()
         titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
         
@@ -206,6 +210,8 @@ class MessagesController: UITableViewController {
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.cornerRadius = 20
         profileImageView.layer.masksToBounds = true
+        
+        self.profileImageView = profileImageView
         
         if let profileImageURL = user.profileImageURL {
             profileImageView.loadImageUsingCacheWithUrlString(urlString: profileImageURL)
@@ -237,7 +243,7 @@ class MessagesController: UITableViewController {
         
         
         self.navigationItem.titleView = titleView
-        
+        */
 //        titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChatController)))
     }
     

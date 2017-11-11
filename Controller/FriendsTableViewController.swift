@@ -58,6 +58,8 @@ class FriendsTableViewController: UITableViewController {
                          user.profileImageURL = dictionary["profileImageURL"] as? String
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
+//                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "userChanged"), object: uid)
+                            
                         }
                         break
                     }
