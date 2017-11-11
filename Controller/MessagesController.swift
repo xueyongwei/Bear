@@ -57,6 +57,7 @@ class MessagesController: UITableViewController {
         messageReference.observeSingleEvent(of: .value, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: Any] {
                 let message = ChatMessage()
+                
                 message.setValuesForKeys(dictionary)
                 
                 if let chatPartnerId = message.chatPartnerId() {
@@ -169,7 +170,10 @@ class MessagesController: UITableViewController {
                 self.navigationItem.title = dictionary["name"] as? String
                 
                 let user = User()
-                user.setValuesForKeys(dictionary)
+                user.email = dictionary["email"] as? String
+                user.name = dictionary["name"] as? String
+                user.profileImageURL = dictionary["profileImageURL"] as? String
+//                user.setValuesForKeys(dictionary)
                 self.setupNavBarWithUser(user)
             }
             

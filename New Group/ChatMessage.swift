@@ -20,6 +20,8 @@ class ChatMessage: NSObject {
         return fromId == Auth.auth().currentUser?.uid ? toId : fromId
         
     }
-    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print("chatMessage undefineKey:\(key)");
+    }
 
 }
