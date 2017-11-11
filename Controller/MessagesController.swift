@@ -176,7 +176,7 @@ class MessagesController: UITableViewController {
         Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let dictionary = snapshot.value as? [String: Any] {
-                self.navigationItem.title = dictionary["name"] as? String
+//                self.navigationItem.title = dictionary["name"] as? String
                 
                 let user = User()
                 user.email = dictionary["email"] as? String
