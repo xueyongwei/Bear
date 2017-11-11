@@ -96,6 +96,7 @@ class FriendTableViewController: UITableViewController {
         
         let user = User()
         user.id = userItem.key
+        
 //        user.setValuesForKeys(dictionary)
         self.showChatControllerForUser(user: user)
     }

@@ -33,7 +33,7 @@ class FriendsTableViewController: UITableViewController {
                 user.id = snapshot.key
                 user.email = dictionary["email"] as? String
                 user.profileImageURL = dictionary["profileImageURL"] as? String
-                
+                user.name = dictionary["name"] as? String
 //                user.setValuesForKeys(dictionary)
                 self.users.append(user)
                 

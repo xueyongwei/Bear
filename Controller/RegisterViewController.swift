@@ -105,9 +105,6 @@ class RegisterViewController: UIViewController {
                 return
             }
             
-            let user = User()
-            user.setValuesForKeys(values)
-            
         })
         
     }
