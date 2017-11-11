@@ -71,6 +71,7 @@ class ProfileViewController: UIViewController, DataSentDelegate, UIImagePickerCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imgPhoto.image = selectedImage
+            self.updateprofileImage(profileImage: imgPhoto.image)
         } else {
             print("Something went wrong")
         }
@@ -116,7 +117,7 @@ class ProfileViewController: UIViewController, DataSentDelegate, UIImagePickerCo
     }
     func userDidEnterData(Data: String) {
         self.receivingLabel.text = Data
-        
+        self.updateUserName(name: Data)
     }
     func updateUserName(name: String) {
         guard let uid = Auth.auth().currentUser?.uid else {
