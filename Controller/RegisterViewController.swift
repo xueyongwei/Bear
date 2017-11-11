@@ -52,11 +52,15 @@ class RegisterViewController: UIViewController {
                                 print(error!)
                                 return
                             }
-                            
-                            if (metadata?.downloadURL()?.absoluteString) != nil {
-                                let values = ["name": username, "email": email, "profileImageURL" : "null"]
-                                 self.registerUserIntoDatabaseWithUID(uid: uid, values: values)
+                            if let profileImageURL = metadata?.downloadURL()?.absoluteString {
+                                let values = ["name": name, "email": email, "profileImageURL" : profileImageURL]
+                                
+                                self.registerUserIntoDatabaseWithUID(uid: uid, values: values)
                             }
+//                            if (metadata?.downloadURL()?.absoluteString) != nil {
+//                                let values = ["name": username, "email": email, "profileImageURL" : "null"]
+//                                 self.registerUserIntoDatabaseWithUID(uid: uid, values: values)
+//                            }
                         })
                     }
                     
