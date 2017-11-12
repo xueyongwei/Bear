@@ -18,6 +18,11 @@
 		27A5FFFA1F92F2DB0050AACF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A5FFF81F92F2DB0050AACF /* Main.storyboard */; };
 		27A5FFFC1F92F2DB0050AACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27A5FFFB1F92F2DB0050AACF /* Assets.xcassets */; };
 		27A5FFFF1F92F2DB0050AACF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A5FFFD1F92F2DB0050AACF /* LaunchScreen.storyboard */; };
+		27AA06BB1FB794A300833A56 /* NewsfeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA06BA1FB794A300833A56 /* NewsfeedTableViewController.swift */; };
+		27AA06BD1FB794A900833A56 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA06BC1FB794A900833A56 /* Post.swift */; };
+		27AA06BF1FB794AD00833A56 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA06BE1FB794AD00833A56 /* PostCell.swift */; };
+		27AA06C11FB794B200833A56 /* PostHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA06C01FB794B200833A56 /* PostHeaderCell.swift */; };
+		27AA06C31FB794B600833A56 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AA06C21FB794B600833A56 /* Users.swift */; };
 		27C262921F96CCC800840E1C /* NameEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C262911F96CCC800840E1C /* NameEditViewController.swift */; };
 		27C262941F96DCC800840E1C /* MpaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C262931F96DCC800840E1C /* MpaViewController.swift */; };
 		27C262961F96DEDF00840E1C /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C262951F96DEDF00840E1C /* MapViewExtension.swift */; };
@@ -74,6 +79,11 @@
 		27A5FFF91F92F2DB0050AACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27A5FFFB1F92F2DB0050AACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27A5FFFE1F92F2DB0050AACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		27AA06BA1FB794A300833A56 /* NewsfeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsfeedTableViewController.swift; sourceTree = "<group>"; };
+		27AA06BC1FB794A900833A56 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		27AA06BE1FB794AD00833A56 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		27AA06C01FB794B200833A56 /* PostHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostHeaderCell.swift; sourceTree = "<group>"; };
+		27AA06C21FB794B600833A56 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		27C262911F96CCC800840E1C /* NameEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditViewController.swift; sourceTree = "<group>"; };
 		27C262931F96DCC800840E1C /* MpaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MpaViewController.swift; sourceTree = "<group>"; };
 		27C262951F96DEDF00840E1C /* MapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
@@ -126,6 +136,7 @@
 		2727A6AA1F930FD20045DC8F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				27AA06B91FB7942C00833A56 /* Posting */,
 				477BE5E61FB5DE0700A08ABF /* New Group */,
 				2727A6AB1F930FE70045DC8F /* LoginViewController.swift */,
 				2727A6AD1F9310060045DC8F /* RegisterViewController.swift */,
@@ -197,6 +208,18 @@
 				27A500001F92F2DB0050AACF /* Info.plist */,
 			);
 			path = Bear;
+			sourceTree = "<group>";
+		};
+		27AA06B91FB7942C00833A56 /* Posting */ = {
+			isa = PBXGroup;
+			children = (
+				27AA06C21FB794B600833A56 /* Users.swift */,
+				27AA06C01FB794B200833A56 /* PostHeaderCell.swift */,
+				27AA06BE1FB794AD00833A56 /* PostCell.swift */,
+				27AA06BA1FB794A300833A56 /* NewsfeedTableViewController.swift */,
+				27AA06BC1FB794A900833A56 /* Post.swift */,
+			);
+			path = Posting;
 			sourceTree = "<group>";
 		};
 		477BE5E61FB5DE0700A08ABF /* New Group */ = {
@@ -456,15 +479,20 @@
 				477BE5EB1FB5DE0800A08ABF /* CustomButton.swift in Sources */,
 				477BE5F11FB5DE3C00A08ABF /* UserItem.swift in Sources */,
 				27C262981F96DF5D00840E1C /* Message.swift in Sources */,
+				27AA06C11FB794B200833A56 /* PostHeaderCell.swift in Sources */,
 				477BE5FD1FB5E02600A08ABF /* UserCell.swift in Sources */,
 				477BE5F61FB5DFA800A08ABF /* User.swift in Sources */,
+				27AA06BD1FB794A900833A56 /* Post.swift in Sources */,
 				27A5FFF71F92F2DB0050AACF /* ViewController.swift in Sources */,
 				477BE5F81FB5DFF000A08ABF /* ChatMessage.swift in Sources */,
 				27A5FFF51F92F2DB0050AACF /* AppDelegate.swift in Sources */,
+				27AA06BB1FB794A300833A56 /* NewsfeedTableViewController.swift in Sources */,
 				2727A6AE1F9310060045DC8F /* RegisterViewController.swift in Sources */,
+				27AA06BF1FB794AD00833A56 /* PostCell.swift in Sources */,
 				477BE6001FB5E03300A08ABF /* Extensions.swift in Sources */,
 				477BE6021FB5E70300A08ABF /* FriendsTableViewController.swift in Sources */,
 				27C262941F96DCC800840E1C /* MpaViewController.swift in Sources */,
+				27AA06C31FB794B600833A56 /* Users.swift in Sources */,
 				477BE5F01FB5DE3C00A08ABF /* FriendViewController.swift in Sources */,
 				477BE5EA1FB5DE0800A08ABF /* HoshiTextField.swift in Sources */,
 				27C262961F96DEDF00840E1C /* MapViewExtension.swift in Sources */,

@@ -1,10 +1,4 @@
-//
-//  UserCell.swift
-//  Messenger
-//
-//  Created by Alexei Kukhto on 9/5/17.
-//  Copyright © 2017 Alexei Kukhto. All rights reserved.
-//
+
 
 import UIKit
 import Firebase
