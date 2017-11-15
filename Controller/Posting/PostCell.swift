@@ -17,6 +17,7 @@ class PostCell: UITableViewCell {
     func updateUI()
     {
 //        self.postImageView.image = post.image
+        self.postImageView.loadImageUsingCacheWithUrlString(urlString: post.image!)
         postCaptionLabel.text = post.caption
         numberOfLikesButton.setTitle("Be the first one to share a comment", for: [])
         timeAgoLabel.text = post.timestamp?.stringValue

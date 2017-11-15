@@ -1,13 +1,5 @@
-
-
-
-
-
-
-
-
-
 import UIKit
+import Firebase
 
 class PostHeaderCell: UITableViewCell
 {
@@ -23,6 +15,7 @@ class PostHeaderCell: UITableViewCell
     
     func updateUI()
     {
+        
 //        profileImageView.image = post.createBy.profileImage
         profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2.0
         profileImageView.layer.masksToBounds = true
@@ -33,6 +26,23 @@ class PostHeaderCell: UITableViewCell
         followButton.layer.cornerRadius = 2.0
         followButton.layer.borderColor = followButton.tintColor.cgColor
         followButton.layer.masksToBounds = true
+        
+        
+        let userID = Auth.auth().currentUser?.uid
+        Database.database().reference().child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let username = value?["name"] as? String ?? ""
+            let profileImgUrl = value?["profileImageURL"] as? String
+            
+            self.usernameLabel.text = username
+            self.profileImageView.loadImageUsingCacheWithUrlString(urlString: profileImgUrl!)
+            
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
     }
     
 }
