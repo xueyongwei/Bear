@@ -25,8 +25,37 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func onPostClick(_ sender: UIButton) {
+        
+        
+        let imageName = NSUUID().uuidString
+        
+        let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName)")
+        
+        if let profileImage = self.imageBtn.imageView?.image, let uploadData = UIImageJPEGRepresentation(profileImage, 0.1) {
+            
+            storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                
+                if let imageURL = metadata?.downloadURL()?.absoluteString {
+                    self.postWithImg(url: imageURL)
+//                    let values = ["name": name, "email": email, "profileImageURL" : profileImageURL]
+//
+//                    self.registerUserIntoDatabaseWithUID(uid: uid, values: values)
+                }
+                
+                
+            })
+        }
+        
+        
+    }
+    func postWithImg(url:String) {
+        
         let uid = Auth.auth().currentUser?.uid
-       
+        
         
         let reference = Database.database().reference().child("messages")
         let childReference = reference.childByAutoId()
@@ -35,7 +64,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let timestamp = NSDate().timeIntervalSince1970 as NSNumber
         
         
-        let values = ["createBy": uid!,"caption":self.textView.text!,"timestamp":timestamp,"image":"","numberOfComments":"","numberOfLikes":"","numberOfShares":""] as [String : Any]
+        let values = ["createBy": uid!,"caption":self.textView.text!,"timestamp":timestamp,"image":url,"numberOfComments":5,"numberOfLikes":10,"numberOfShares":15] as [String : Any]
         //        childReference.updateChildValues(values)
         
         childReference.updateChildValues(values) { (error, ref) in
@@ -48,7 +77,6 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             self.navigationController?.popViewController(animated: true)
             
         }
-        
     }
     @IBAction func onImgBtnClick(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
