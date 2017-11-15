@@ -28,15 +28,16 @@ class PostHeaderCell: UITableViewCell
         followButton.layer.masksToBounds = true
         
         
-        let userID = Auth.auth().currentUser?.uid
+        let userID = post.createBy
         Database.database().reference().child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
-            let username = value?["name"] as? String ?? ""
-            let profileImgUrl = value?["profileImageURL"] as? String
+            let username = value?["name"] as? String ?? "noName"
+            if let profileImgUrl = value?["profileImageURL"] as? String{ self.profileImageView.loadImageUsingCacheWithUrlString(urlString: profileImgUrl)
+            }
             
             self.usernameLabel.text = username
-            self.profileImageView.loadImageUsingCacheWithUrlString(urlString: profileImgUrl!)
+            
             
             // ...
         }) { (error) in
