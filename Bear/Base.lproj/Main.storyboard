@@ -432,7 +432,6 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnPickPhoto_TouchUpInside:" destination="2Sr-1J-zSr" eventType="touchUpInside" id="eog-SP-msO"/>
                                     <segue destination="GAv-82-ULR" kind="show" id="zFm-Ho-Nbg"/>
                                 </connections>
                             </button>
@@ -480,10 +479,10 @@
             </objects>
             <point key="canvasLocation" x="1525.5999999999999" y="2888.9055472263872"/>
         </scene>
-        <!--View Controller-->
+        <!--Post View Controller-->
         <scene sceneID="aQN-jr-Skb">
             <objects>
-                <viewController id="GAv-82-ULR" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="GAv-82-ULR" customClass="PostViewController" customModule="Bear" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zWk-qL-fdg"/>
                         <viewControllerLayoutGuide type="bottom" id="gpq-h4-RMR"/>
@@ -492,26 +491,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lz6-ir-cY1">
-                                <rect key="frame" x="0.0" y="72" width="375" height="127"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="tap to post" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lz6-ir-cY1">
+                                <rect key="frame" x="8" y="72" width="359" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Nb9-BY-mqJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RK-EG-ThV">
-                                <rect key="frame" x="0.0" y="488" width="375" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RK-EG-ThV">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="K7X-uV-Ew6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPostClick:" destination="GAv-82-ULR" eventType="touchUpInside" id="gux-PA-zMM"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Weg-Fx-4Sg">
-                                <rect key="frame" x="58" y="221" width="258" height="225"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPe-au-run">
+                                <rect key="frame" x="94.5" y="182" width="187.5" height="187.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nPe-au-run" secondAttribute="height" multiplier="1:1" id="SY2-7R-7X6"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Imageadd"/>
+                                <connections>
+                                    <action selector="onImgBtnClick:" destination="GAv-82-ULR" eventType="touchUpInside" id="aR2-D5-dV7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lz6-ir-cY1" firstAttribute="top" secondItem="zWk-qL-fdg" secondAttribute="bottom" constant="8" id="DYu-OZ-s35"/>
+                            <constraint firstAttribute="trailing" secondItem="lz6-ir-cY1" secondAttribute="trailing" constant="8" id="GWO-gG-iHX"/>
+                            <constraint firstItem="nPe-au-run" firstAttribute="centerX" secondItem="Bg7-ah-Lcx" secondAttribute="centerX" id="Uwa-Za-uaf"/>
+                            <constraint firstItem="nPe-au-run" firstAttribute="top" secondItem="lz6-ir-cY1" secondAttribute="bottom" constant="10" id="YYq-HL-iMG"/>
+                            <constraint firstAttribute="trailing" secondItem="1RK-EG-ThV" secondAttribute="trailing" id="gYX-uf-El5"/>
+                            <constraint firstItem="gpq-h4-RMR" firstAttribute="top" secondItem="1RK-EG-ThV" secondAttribute="bottom" id="hrz-d4-CxB"/>
+                            <constraint firstItem="lz6-ir-cY1" firstAttribute="leading" secondItem="Bg7-ah-Lcx" secondAttribute="leading" constant="8" id="i48-2l-phI"/>
+                            <constraint firstItem="nPe-au-run" firstAttribute="width" secondItem="Bg7-ah-Lcx" secondAttribute="width" multiplier="0.5" id="nu3-01-Vbg"/>
+                            <constraint firstItem="1RK-EG-ThV" firstAttribute="leading" secondItem="Bg7-ah-Lcx" secondAttribute="leading" id="zW5-Qn-hSB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageBtn" destination="nPe-au-run" id="b5B-ww-VML"/>
+                        <outlet property="textView" destination="lz6-ir-cY1" id="vIc-V7-jsN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUV-BA-h8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -961,6 +991,7 @@
         <image name="2" width="1080" height="1080"/>
         <image name="505872990" width="375" height="667"/>
         <image name="Group 2" width="106" height="66"/>
+        <image name="Imageadd" width="128" height="128"/>
         <image name="bear-side-view-silhouette_318-42619" width="103" height="103"/>
         <image name="bg" width="156" height="156"/>
         <image name="bg 2" width="374" height="60"/>

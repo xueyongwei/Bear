@@ -42,6 +42,7 @@
 		477BE6001FB5E03300A08ABF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE5FF1FB5E03300A08ABF /* Extensions.swift */; };
 		477BE6021FB5E70300A08ABF /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE6011FB5E70300A08ABF /* FriendsTableViewController.swift */; };
 		477BE6041FB5E72D00A08ABF /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477BE6031FB5E72D00A08ABF /* MessagesController.swift */; };
+		47B0719E1FBC2846000DEE09 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0719D1FBC2846000DEE09 /* PostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		477BE5FF1FB5E03300A08ABF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		477BE6011FB5E70300A08ABF /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		477BE6031FB5E72D00A08ABF /* MessagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
+		47B0719D1FBC2846000DEE09 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		C85BA762C3C3B7CD61BF136A /* Pods_Bear.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bear.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C2F3E72A0832E5858F5922 /* Pods-Bear.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bear.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bear/Pods-Bear.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +153,7 @@
 				477BE5ED1FB5DE3C00A08ABF /* FriendViewController.swift */,
 				477BE5EE1FB5DE3C00A08ABF /* UserItem.swift */,
 				477BE5F91FB5DFFF00A08ABF /* ChatController.swift */,
+				47B0719D1FBC2846000DEE09 /* PostViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				477BE5EC1FB5DE0800A08ABF /* TextFieldEffects.swift in Sources */,
 				477BE5F21FB5DE3C00A08ABF /* FriendTableViewController.swift in Sources */,
 				477BE5FA1FB5DFFF00A08ABF /* ChatController.swift in Sources */,
+				47B0719E1FBC2846000DEE09 /* PostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

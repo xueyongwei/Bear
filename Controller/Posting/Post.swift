@@ -6,10 +6,27 @@
 
 
 import UIKit
-
+class Post: NSObject {
+    
+    var id: String?
+    var createBy:String?
+    var timestamp: NSNumber?
+    var caption: String?
+    var image: String?
+    var numberOfLikes: Int?
+    var numberOfComments: Int?
+    var numberOfShares: Int?
+    
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print("Post undefineKey:\(key)");
+    }
+}
+/*
 struct Post
 {
-    var createdBy: Users
+//    var createdBy: Users
+    var createBy:String?
     var timeAgo: String?
     var caption: String?
     var image: UIImage?
@@ -19,6 +36,8 @@ struct Post
     
     static func fetchPosts() -> [Post]
     {
+        return [Post]()
+        /*
         var posts = [Post]()
         
         let duc = Users(username: "Duc Tran", profileImage: UIImage(named: "duc"))
@@ -41,24 +60,8 @@ struct Post
         posts.append(post6)
         
         return posts
+ */
     }
+ 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/

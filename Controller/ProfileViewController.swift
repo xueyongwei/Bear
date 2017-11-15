@@ -72,6 +72,7 @@ class ProfileViewController: UIViewController, DataSentDelegate, UIImagePickerCo
         if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imgPhoto.image = selectedImage
             self.updateprofileImage(profileImage: selectedImage)
+            
         } else {
             print("Something went wrong")
         }
