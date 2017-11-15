@@ -29,7 +29,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         let imageName = NSUUID().uuidString
         
-        let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName)")
+        let storageRef = Storage.storage().reference().child("post_images").child("\(imageName)")
         
         if let profileImage = self.imageBtn.imageView?.image, let uploadData = UIImageJPEGRepresentation(profileImage, 0.1) {
             
@@ -40,6 +40,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 }
                 
                 if let imageURL = metadata?.downloadURL()?.absoluteString {
+                    
                     self.postWithImg(url: imageURL)
 //                    let values = ["name": name, "email": email, "profileImageURL" : profileImageURL]
 //
@@ -57,7 +58,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let uid = Auth.auth().currentUser?.uid
         
         
-        let reference = Database.database().reference().child("messages")
+        let reference = Database.database().reference().child("posts")
         let childReference = reference.childByAutoId()
         
         
